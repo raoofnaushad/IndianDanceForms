@@ -3,12 +3,13 @@ from torchvision.transforms import transforms
 
 import config
 from PIL import Image
-
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def get_image(path):
     img = Image.open(path)
-    
+    # img.show()
     transform = transforms.Compose([
                                     transforms.Resize(size=(224, 224)),
                                     # transforms.CenterCrop(224),
@@ -17,7 +18,6 @@ def get_image(path):
                                     ])
     
     img = transform(img)
-    
     return img
 
 

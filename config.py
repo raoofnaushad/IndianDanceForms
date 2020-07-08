@@ -11,4 +11,4 @@ idx_class_labels = {
 
  
 PATH = 'check/image.jpg'
-MODEL_PATH = 'Models/indian_dance_form.pth'
+MODEL_PATH = 'Models/indian_dance_form.pt'

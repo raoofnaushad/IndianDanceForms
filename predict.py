@@ -8,10 +8,10 @@ def predict_single():
     image = get_image(config.PATH)
     device = get_device()
     model = get_model()
+    model.eval()
     xb = image.unsqueeze(0)
     xb = to_device(xb, device)
     preds = model(xb)
-    print(preds)
     _, prediction = torch.max(preds.cpu().detach(), dim=1)
     return decode_target(int(prediction), text_labels=True)
 
